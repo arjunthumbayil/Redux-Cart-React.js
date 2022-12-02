@@ -12,12 +12,18 @@ import { createStore } from "redux";
 const initialStore = { count: 78 };
 
 function reducer(state, action) {
-  console.log({ state, action });
+  if (action.type === "DECREASE") {
+    return { ...state, count: state.count - 1 };
+  }
   return state;
 }
 
 const store = createStore(reducer, initialStore);
 console.log(store.getState());
+store.dispatch({ type: "DECREASE" });
+store.dispatch({ type: "DECREASE" });
+store.dispatch({ type: "DECREASE" });
+store.dispatch({ type: "DECREASE" });
 
 function App() {
   // cart setup
