@@ -1,31 +1,21 @@
 import React from "react";
-// components
 import Navbar from "./components/Navbar";
 import CartContainer from "./components/CartContainer";
-// items
 import cartItems from "./cart-items";
 // redux stuff
 import { createStore } from "redux";
-import { INCREASE, DECREASE } from "./action";
-
 import reducer from "./reducer";
 //initial store
-const initialStore = { count: 78, name: "Ravi" };
-
+const initialStore = { cart: cartItems, total: 0, amount: 0 };
+//Next line is similar to useReducer hook
 const store = createStore(reducer, initialStore);
-console.log(store.getState());
-store.dispatch({ type: DECREASE });
-store.dispatch({ type: "RESET" });
-store.dispatch({ type: INCREASE });
-store.dispatch({ type: "CHANGE_NAME" });
-console.log(store.getState());
 
 function App() {
   // cart setup
 
   return (
     <main>
-      <Navbar cart={store.getState()} />
+      <Navbar />
       <CartContainer cart={cartItems} />
     </main>
   );
