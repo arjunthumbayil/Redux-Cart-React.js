@@ -6,6 +6,18 @@ import CartContainer from "./components/CartContainer";
 import cartItems from "./cart-items";
 // redux stuff
 
+import { createStore } from "redux";
+
+//initial store
+const initialStore = { count: 0 };
+
+function reducer(state, action) {
+  console.log({ state, action });
+  return state;
+}
+
+const store = createStore(reducer, initialStore);
+
 function App() {
   // cart setup
 
