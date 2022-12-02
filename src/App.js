@@ -9,7 +9,7 @@ import cartItems from "./cart-items";
 import { createStore } from "redux";
 
 //initial store
-const initialStore = { count: 78 };
+const initialStore = { count: 78, name: "Ravi" };
 
 function reducer(state, action) {
   if (action.type === "DECREASE") {
@@ -21,6 +21,9 @@ function reducer(state, action) {
   if (action.type === "RESET") {
     return { ...state, count: 0 };
   }
+  if (action.type === "CHANGE_NAME") {
+    return { ...state, name: "Kumar" };
+  }
   return state;
 }
 
@@ -29,6 +32,8 @@ console.log(store.getState());
 store.dispatch({ type: "DECREASE" });
 store.dispatch({ type: "RESET" });
 store.dispatch({ type: "INCREASE" });
+store.dispatch({ type: "CHANGE_NAME" });
+console.log(store.getState());
 
 function App() {
   // cart setup
