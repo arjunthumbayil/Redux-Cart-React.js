@@ -5,16 +5,16 @@ function reducer(state, action) {
     return { ...state, cart: [] };
   }
   if (action.type === INCREASE) {
-    return {
-      ...state,
-      cart: state.cart.amount + 1,
-    };
+    // return {
+    //   ...state,
+    //   cart: state.cart.amount + 1,
+    // };
   }
   if (action.type === DECREASE) {
-    return {
-      ...state,
-      cart: state.cart.amount - 1,
-    };
+    // return {
+    //   ...state,
+    //   cart: state.cart.amount - 1,
+    // };
   }
   if (action.type === REMOVE) {
     return {
