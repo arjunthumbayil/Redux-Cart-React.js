@@ -1,6 +1,6 @@
 import { INCREASE, DECREASE, CLEAR_CART } from "./action";
 
-function reducer(state, amaction) {
+function reducer(state, action) {
   switch (action.type) {
     case CLEAR_CART:
       return { ...state, cart: [] };
