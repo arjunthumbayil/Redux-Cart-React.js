@@ -9,7 +9,7 @@ import reducer from "./reducer";
 import { Provider } from "react-redux";
 
 // initial store
-const initialStore = { cart: cartItems, total: 0, amount: 0 };
+const initialStore = { cart: cartItems, total: 0, amount: 5 };
 //Next line is similar to useReducer hook
 const store = createStore(reducer, initialStore);
 
