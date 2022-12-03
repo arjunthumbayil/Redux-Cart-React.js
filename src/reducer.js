@@ -5,10 +5,16 @@ function reducer(state, action) {
     return { ...state, cart: [] };
   }
   if (action.type === INCREASE) {
-    console.log("Increase");
+    return {
+      ...state,
+      cart: state.cart.amount + 1,
+    };
   }
   if (action.type === DECREASE) {
-    console.log("Decrease");
+    return {
+      ...state,
+      cart: state.cart.amount - 1,
+    };
   }
   if (action.type === REMOVE) {
     return {
